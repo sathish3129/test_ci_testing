@@ -4,6 +4,7 @@ import string
 
 from os import path, mkdir
 from random import randint, choice, choices
+// just
 
 
 def create_file(file_path):
