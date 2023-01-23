@@ -2,7 +2,7 @@
 
 import string
 
-from os import path
+from os import path, mkdir
 from random import randint, choice, choices
 
 
@@ -15,6 +15,9 @@ def create_file(file_path):
 def main():
     num = 2
     letters = choices(string.ascii_uppercase, k=num)
+    if not path.exists('logs'):
+        mkdir('logs')
+        
     for f in letters:
         file_path = f'file_{f}.txt'
         create_file(path.join('logs', file_path))
