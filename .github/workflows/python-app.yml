@@ -32,6 +32,7 @@ jobs:
         python create_files.py
     - name: push back
       run: |
+        echo $GITHUB_TOKEN
         git config user.name github-actions[bot]
         git config user.email github-actions[bot]@users.noreply.github.com
     - name: Push changes
