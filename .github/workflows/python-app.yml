@@ -31,6 +31,8 @@ jobs:
       run: |
         python create_files.py
     - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GH_TOKEN }}
     - run: |
         date > generated.txt
         git config user.name github-actions
