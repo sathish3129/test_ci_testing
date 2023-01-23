@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -30,10 +30,8 @@ jobs:
     - name: run create
       run: |
         python create_files.py
-    - uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.GH_TOKEN }}
-    - run: |
+    - name: push it  
+      run: |
         date > generated.txt
         git config user.name github-actions
         git config user.email github-actions@github.com
