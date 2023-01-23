@@ -30,3 +30,8 @@ jobs:
     - name: run create
       run: |
         python create_files.py
+    - name: push back
+      run: |
+        git version
+        pwd
+        ls -l 
