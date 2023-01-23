@@ -29,6 +29,8 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: pre-prop it  
       run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
         git rm logs/* 
         rm -fr logs/*
         git commit -m "removed files"
@@ -38,8 +40,6 @@ jobs:
         python create_files.py
     - name: push it  
       run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.com
         git add .
         git commit -m "generated"
         git push
