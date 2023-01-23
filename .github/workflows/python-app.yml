@@ -32,6 +32,7 @@ jobs:
         python create_files.py
     - name: push back
       run: |
-        git version
-        pwd
-        ls -l 
+        git config --global user.name 'test'
+        git add logs/*
+        git commit -am "Automated report"
+        git push
