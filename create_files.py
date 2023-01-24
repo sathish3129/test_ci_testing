@@ -5,7 +5,7 @@ import string
 from os import path, mkdir
 from random import randint, choice, choices
 
-# somethig
+# 
 def create_file(file_path):
     with open(file_path, 'w') as file:
         for i in range(1, 100):
