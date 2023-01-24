@@ -28,6 +28,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: pre-run 
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        git rm -f logs/*
+        rm -f logs/*
+        git commit -m "remove the file"
     - name: run create
       run: |
         python create_files.py
