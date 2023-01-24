@@ -28,16 +28,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: pre-prop it  
-      run: |
-        git init
-        git add -A 
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git rm -f logs/* 
-        rm -fr logs/*
-        git commit -m "removed files"
-        git push
     - name: run create
       run: |
         python create_files.py
